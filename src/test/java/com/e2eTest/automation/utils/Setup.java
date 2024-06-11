@@ -7,12 +7,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 
 public class Setup {
 
 	private static WebDriver driver;
+
+	private static final Logger LOGGER = (Logger) LogManager.getLogger(Setup.class.getName());
 
 	/**
 	 * This method is used to open browser. This method is called before the
@@ -23,7 +28,8 @@ public class Setup {
 	 * @Before Methods annotated with @Before will execute before every scenario.
 	 */
 	@Before
-	public void setWebDriver() {
+	public void setWebDriver(Scenario scenario) {
+		LOGGER.info("Scenario: " + scenario.getName() + "- started");
 		String browser = System.getProperty("browser");
 		if (browser == null) {
 			browser = "chrome";
@@ -56,5 +62,8 @@ public class Setup {
 	public static WebDriver getDriver() {
 		return driver;
 	}
-	
+
+	public static Logger getLogger() {
+		return LOGGER;
+	}
 }
