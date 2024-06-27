@@ -51,8 +51,8 @@ public class LoginStepDefinitions {
 
 	@Then("Je me redirige vers la page home {string}")
 	public void jeMeRedirigeVersLaPageHome(String text) {
-		// String titlePage = LoginPage.getTitlePage().getText();
-		// Assert.assertEquals(titlePage, text);
+		 String titlePage = LoginPage.getTitlePage().getText();
+		 Assert.assertEquals(titlePage, text);
 	}
 
 }
