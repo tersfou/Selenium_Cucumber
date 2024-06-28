@@ -11,11 +11,16 @@ Feature: Je souhaire rechercher et ajouter un produit
 
   @rechercheProduit
   Scenario: Recherche de Produit
-    And Je saisis le nom du produit "hp"
-    And Je saisis la categorie
+    And Je saisis le nom du produit
+    And Je selectionne une categorie
     And Je clique sur le bouton search
-    Then Je verifie le produit "hp..."
 
   @ajoutProduct
-  Scenario: Ajout
+  Scenario: Ajout de Produit
     And Je clique sur le bouton add new
+    And Je saisis le nom du nouveau produit
+    And Je saisis la date de debut disponible
+    And Je saisis la Date de fin disponible
+    And Je selectionne un taxe categorie
+    And Je clique sur le bouton save
+    

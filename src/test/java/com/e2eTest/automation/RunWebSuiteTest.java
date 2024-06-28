@@ -19,7 +19,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features = { "src/spec/features" }, 
 		plugin = { "pretty","html:target/cucumber-report.html" }, 
-		tags = ("@rechercheProduit"),
+		tags = ("@product"),
 //		glue = {"src/test/java/com/e2eTest/automation/step_definitions"},
 		monochrome = false, 
 		snippets = CAMELCASE
